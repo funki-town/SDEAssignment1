@@ -25,6 +25,34 @@ Last updated: 23/09/16
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<script>
+function showAge() {
+    var name = document.getElementByName("name").value;
+    var age = document.getElementByName("date").value;
+    if (name==null || age ==null) {
+        document.getElementById("return").innerHTML = "Please enter your details above";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("return").class = "";
+                document.getElementById("return").innerHTML = this.responseText;
+                
+            }
+        };
+        xmlhttp.open("GET","calculate.php?a="+name+"&b="+date+,true);
+        xmlhttp.send();
+    }
+}
+</script>
+
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -45,17 +73,20 @@ Last updated: 23/09/16
     </div>
         <div class="container" id="app">
             <div class="form-group">
-            <form>
+            <form onsubmit="showAge">
                 <div class="col-xs-4">  
                     <Label> Enter your name </Label>
-                    <input type="text" class="form-control"></input> 
+                    <input name="name" type="text" class="form-control"></input> 
                     <Label>Enter your age</Label>         
-                    <input type="date" class="form-control"></input>
+                    <input name="date" type="date" class="form-control"></input>
                     </br>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </div>
             </form>
             </div>
+        </div>
+        <div id="return">
+
         </div>
         
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
