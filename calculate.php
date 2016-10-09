@@ -10,6 +10,7 @@ if (!$con) {
 }
 else{
     $diff = (date('Y') - date('d',$date));
+    alert($diff);
     echo $diff;
     
 }
