@@ -85,9 +85,9 @@ function showAge() {
             </form>
             </div>
         </div>
-        <div id="return">
+        <p><div id="return">
 
-        </div>
+        </div></p>
         
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
