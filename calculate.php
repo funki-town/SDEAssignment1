@@ -9,8 +9,7 @@ if (!$con) {
     die('Could not connect: ' . mysqli_error($con));
 }
 else{
-    $date = new DateTime(d.m.y);
-    $diff = (date('Y') - date('d',strtotime($date)));
+    $diff = (date('Y') - date('d',$date));
     echo $diff;
     
 }
@@ -22,5 +21,5 @@ else{
 //$result = mysqli_query($con,$sql);
 
 
-//mysqli_close($con);
+mysqli_close($con);
 ?>
