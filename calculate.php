@@ -3,6 +3,7 @@ if (isset($_GET['a']) && isset($_GET['b'])) {
 //get values from form
 $name = $_GET['a'];
 $date = $_GET['b'];
+
 //connect to the database
 $con = mysqli_connect('db4free.net','s4964276','28853671','sdeassign1');
 if (!$con) {

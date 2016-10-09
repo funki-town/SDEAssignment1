@@ -73,7 +73,7 @@ function showAge() {
     </div>
         <div class="container" id="app">
             <div class="form-group">
-            <form onsubmit="showAge">
+            <form onsubmit="showAge()">
                 <div class="col-xs-4">  
                     <Label> Enter your name </Label>
                     <input name="name" type="text" class="form-control"></input> 
