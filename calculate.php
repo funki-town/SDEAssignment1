@@ -1,20 +1,20 @@
 <?php
-if (isset($_GET['a']) && isset($_GET['b'])) {
 //get values from form
-$name = $_GET['a'];
-$date = $_GET['b'];
-}
+$name = $_REQUEST['a'];
+$birthday = $_REQUEST['b'];
+
 //connect to the database
-$con = mysqli_connect('db4free.net','s4964276','28853671','sdeassign1');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
-}
-else{
-    $diff = (date('Y') - date('d',$date));
-    alert($diff);
+//$con = mysqli_connect('db4free.net','s4964276','28853671','sdeassign1');
+//if (!$con) {
+   // die('Could not connect: ' . mysqli_error($con));
+//}
+//else{
+    $today = date("Y-m-d");
+    $diff = date_diff(date_create($birthday),date_create($today));
     echo $diff;
     
-}
+    
+//}
 
 
 
@@ -23,5 +23,5 @@ else{
 //$result = mysqli_query($con,$sql);
 
 
-mysqli_close($con);
+//mysqli_close($con);
 ?>

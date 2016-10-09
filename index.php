@@ -25,34 +25,6 @@ Last updated: 23/09/16
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<script>
-function showAge() {
-    var name = document.getElementByName("name").value;
-    var age = document.getElementByName("date").value;
-    if (name==null || age ==null) {
-        document.getElementById("return").innerHTML = "Please enter your details above";
-        return;
-    } else { 
-        if (window.XMLHttpRequest) {
-            // code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp = new XMLHttpRequest();
-        } else {
-            // code for IE6, IE5
-            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("return").class = "";
-                document.getElementById("return").innerHTML = this.responseText;
-                
-            }
-        };
-        xmlhttp.open("GET","calculate.php?a="+name+"&b="+date+,true);
-        xmlhttp.send();
-    }
-}
-</script>
-
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -76,11 +48,12 @@ function showAge() {
             <form onsubmit="showAge()">
                 <div class="col-xs-4">  
                     <Label> Enter your name </Label>
-                    <input name="name" type="text" class="form-control"></input> 
+                    <input id="name" type="text" class="form-control"></input> 
                     <Label>Enter your age</Label>         
-                    <input name="date" type="date" class="form-control"></input>
+                    <input id="date" type="date" class="form-control"></input>
                     </br>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <!--<button type="submit" class="btn btn-default">Submit</button>-->
+                    <input type="button" value="Calculate" onclick="showAge()"/>
                 </div>
             </form>
             </div>
@@ -93,6 +66,6 @@ function showAge() {
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-     <script type="text/javascript" src="bidding.js"></script>
+     <script type="text/javascript" src="calculate.js"></script>
 </body>
 </html>
