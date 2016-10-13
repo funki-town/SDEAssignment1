@@ -49,7 +49,7 @@ Last updated: 23/09/16
                     </br>
                     <!--<button type="submit" class="btn btn-default">Submit</button>-->
                     <input class="btn btn-primary" type="button" value="Calculate" onclick="showAge()"/>
-                    <input class="btn btn-info" type="button" value="Show All"/>
+                    <input class="btn btn-info" type="button" value="Show All" onclick="getAll()"/>
             </form>
             </div>
           </div>
@@ -60,16 +60,16 @@ Last updated: 23/09/16
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
+      </br>
         <div class="container">
-
+          <div id="database2"></div>
+          <div id="list"></div>
         </div>
-      </div>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
      <script type="text/javascript" src="calculate.js"></script>
+     <script type="text/javascript" src="getAll.js"></script>
 </body>
 </html>
