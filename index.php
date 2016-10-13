@@ -14,7 +14,6 @@ Last updated: 23/09/16
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Assignment 2 " />
     <meta name="keywords" content="Assignment 2" />
-
     <title>Age Calculator</title>
     <!-- Bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -49,15 +48,22 @@ Last updated: 23/09/16
                     <input id="date" type="date" class="form-control"></input>
                     </br>
                     <!--<button type="submit" class="btn btn-default">Submit</button>-->
-                    <input type="button" value="Calculate" onclick="showAge()"/>
+                    <input class="btn btn-primary" type="button" value="Calculate" onclick="showAge()"/>
+                    <input class="btn btn-info" type="button" value="Show All"/>
             </form>
             </div>
           </div>
       </br>
           <div class="col-md-6">
+            <div id="database"></div>
               <div id="message"></div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+
         </div>
       </div>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
