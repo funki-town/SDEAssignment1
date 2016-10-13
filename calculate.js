@@ -11,11 +11,14 @@ function showAge() {
   var div = document.getElementById("message");
   var name = document.getElementById("name").value;
   var date = document.getElementById("date").value;
+  //show connection message
+  var div2 = document.getElementById("database");
+  div2.className = "alert alert-info";
+  div2.innerHTML="Connecting to Database. Please Wait";
     if (name == "" || date == "") {
         //validate inputs client side
         div.innerHTML = "Please enter your details above";
         div.className = "alert alert-warning";
-        return;
     } else {
         //calculate age
         xHRObject.open("GET", "calculate.php?a=" + name + "&b=" + date, true);
@@ -30,6 +33,9 @@ function recData() {
         //for testing
         //alert("You are  " + xHRObject.responseText + " days old");
         if(xHRObject.responseText.length > 0){
+          //show confirmation message
+          var div2 = document.getElementById("database");
+          div2.innerHTML="Data insterted to the database";
           //populate the message
           var div = document.getElementById("message");
           div.className = "alert alert-success";
