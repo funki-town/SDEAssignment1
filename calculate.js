@@ -35,10 +35,11 @@ function recData() {
         if(xHRObject.responseText.length > 0){
           //show confirmation message
           var div2 = document.getElementById("database");
+          div2.className="alert alert-success";
           div2.innerHTML="Data insterted to the database";
           //populate the message
           var div = document.getElementById("message");
-          div.className = "alert alert-success";
+          div.className = "alert alert-info";
           div.innerHTML = "You are " + xHRObject.responseText + " day(s) old";
         }
     }
