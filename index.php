@@ -1,6 +1,6 @@
 <!--
 Author: Al Hutchings 4964276
-Purpose: Assignment 1 - 
+Purpose: Assignment 1 -
 /Created: 23/09/16
 Last updated: 23/09/16
 -->
@@ -29,11 +29,6 @@ Last updated: 23/09/16
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a class="navbar-brand" href="#">SWE30004 - Assignment 1</a>
             </div>
     </nav>
@@ -43,25 +38,28 @@ Last updated: 23/09/16
             <p>Calculate how many days you've been alive.</p>
         </div>
     </div>
-        <div class="container" id="app">
+    <div class="row">
+        <div id="app"class="container">
+          <div class="col-md-6">
             <div class="form-group">
             <form onsubmit="showAge()">
-                <div class="col-xs-4">  
                     <Label> Enter your name </Label>
-                    <input id="name" type="text" class="form-control"></input> 
-                    <Label>Enter your age</Label>         
+                    <input id="name" type="text" class="form-control"></input>
+                    <Label>Enter your birthday</Label>
                     <input id="date" type="date" class="form-control"></input>
                     </br>
                     <!--<button type="submit" class="btn btn-default">Submit</button>-->
                     <input type="button" value="Calculate" onclick="showAge()"/>
-                </div>
             </form>
             </div>
+          </div>
+      </br>
+          <div class="col-md-6">
+              <div id="message"></div>
+            </div>
+          </div>
         </div>
-        <p><div id="return">
-
-        </div></p>
-        
+      </div>
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
