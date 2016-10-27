@@ -11,3 +11,4 @@
       apt: update_cache=yes
     - include: tasks/apache.yml
     - include: tasks/php.yml
+    - include: tasks/phpconfig.yml

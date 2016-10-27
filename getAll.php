@@ -9,7 +9,9 @@ if (!$con) {
 else
 {
     //create query
-    $sql = "SELECT * FROM data";
+    $sql = "SELECT *
+            FROM data
+            ORDER BY AID DESC";
     //execute query
     $result = mysqli_query($con, $sql);
     //return error message if failed
@@ -19,11 +21,11 @@ else
     }
     else
     {
-       echo "<table class='table table-striped'><tr><th>ID</th><th>Name</th><th>Age In Days</th><th>Birthday</th><th>Timestamp</th></tr>";
+       echo "<table class='table table-striped'><tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Age In Days</th><th>Birthday</th><th>Timestamp</th></tr>";
       //output each row
       while($row=mysqli_fetch_assoc($result))
         {
-            echo "<tr><td>".$row['AID']."</td><td>".$row["name"]."</td><td>".$row["age"]."</td><td>".$row["birthday"]."</td><td>".$row["timeStamp"]."</td></tr>";
+            echo "<tr><td>".$row['AID']."</td><td>".$row["name"]."</td><td>".$row["lname"]."</td><td>".$row["age"]."</td><td>".$row["birthday"]."</td><td>".$row["timeStamp"]."</td></tr>";
         }
         echo "</table>";
     }

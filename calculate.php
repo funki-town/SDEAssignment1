@@ -1,6 +1,7 @@
 <?php
-//get name string
+//get name strings
 $name = $_GET['a'];
+$lname = $_GET['c'];
 //get birthday string
 $birthday = $_GET['b'];
 //convert string to date
@@ -18,11 +19,13 @@ else
     $today = date("d-m-Y");
   ////calculate age and return via xHR object
     $diff = date_diff(date_create($today),date_create($birthday));
+  //calculate martian age and return via xHR object
+    $martian = $diff->format('%a') * 1.88;
   //convert times back to strings for sql insertion
     $birthday=date_create($birthday)->format('Y-m-d');
     $diff=$diff->format('%a');
   //create query
-    $sql = "INSERT INTO data (name, age, birthday) VALUES ('$name' ,'$diff' , '$birthday')";
+    $sql = "INSERT INTO data (name, lname,age, birthday) VALUES ('$name' ,'$lname','$diff' , '$birthday')";
     if (mysqli_query($con,$sql)===false)
     {
     //return error
@@ -32,6 +35,8 @@ else
     {
     //return age if inserted into data correctly
     echo $diff;
+    echo " || ";
+    echo $martian;
     }
   //close connection
   mysqli_close($con);

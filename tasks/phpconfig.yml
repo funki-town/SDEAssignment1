@@ -1,0 +1,13 @@
+---
+- name: Copy across PHP file
+  template:
+    src=php.ini
+    dest=/etc/php5/apache2/php.ini
+  notify:
+      - reload apache
+- name: Remove old php file
+  file:
+    path=/etc/php5/apache2/php.ini
+    state=absent
+  notify:
+    - reload apache
